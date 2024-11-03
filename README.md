@@ -1,5 +1,5 @@
 # Cosmere Useful Macros
-This modules if for use in the currently open Beta test of the Cosmere RPG. It's purpose is to provide macros for ease of access to certain features while the core system is still being built.
+This module is for use in the currently open Beta test of the Cosmere RPG. It's purpose is to provide macros for ease of access to certain features while the core system is still being built.
 * This module contains the following world scripts:
   *  Adds the *Invisible* condition to the game system to enable certain core Foundry features.
 * The following macros are currently included:
