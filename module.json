@@ -11,6 +11,7 @@
     "minimum": "12",
     "verified": "12"
   },
+  "manifest": "https://raw.githubusercontent.com/Dez384/Cosmere_Useful_Macros/main/module.json",
   "esmodules": ["world.js"],
   "packs": [
     {
