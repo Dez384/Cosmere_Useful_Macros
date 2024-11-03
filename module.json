@@ -1,0 +1,23 @@
+{
+  "id": "cosmere-useful-macros",
+  "title": "Cosmere Useful Macros",
+  "authors": [
+    {
+      "name": "Dez384"
+    }
+  ],
+  "version": "0.0.0",
+  "compatibility": {
+    "minimum": "12",
+    "verified": "12"
+  },
+  "esmodules": ["world.js"],
+  "packs": [
+    {
+      "name": "useful-macros",
+      "label": "Useful Macros",
+      "path": "./packs/macros",
+      "type": "Macro"
+    }
+  ]
+}
