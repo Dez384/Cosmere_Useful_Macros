@@ -1,17 +1,20 @@
 {
   "id": "cosmere-useful-macros",
   "title": "Cosmere Useful Macros",
+  "description": "A macro compendium to enhance playing the Cosmere RPG.",
   "authors": [
     {
       "name": "Dez384"
     }
   ],
-  "version": "0.0.0",
+  "version": "0.0.1",
   "compatibility": {
     "minimum": "12",
-    "verified": "12"
+    "verified": "12.330"
   },
+  "url": "https://github.com/Dez384/Cosmere_Useful_Macros",
   "manifest": "https://raw.githubusercontent.com/Dez384/Cosmere_Useful_Macros/main/module.json",
+  "download": "https://github.com/Dez384/Cosmere_Useful_Macros/archive/refs/tags/v0.0.1.zip",
   "esmodules": ["world.js"],
   "packs": [
     {
@@ -19,6 +22,13 @@
       "label": "Useful Macros",
       "path": "./packs/macros",
       "type": "Macro"
+    }
+  ],
+  "packFolders": [
+    {
+      "name": "Useful Macros",
+      "sorting": "a",
+      "packs": ["useful-macros"]
     }
   ]
 }

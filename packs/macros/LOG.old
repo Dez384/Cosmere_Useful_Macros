@@ -1,14 +1,14 @@
-2024/11/03-00:25:05.712 19e14 Recovering log #16
-2024/11/03-00:25:05.713 19e14 Delete type=0 #16
-2024/11/03-00:25:05.713 19e14 Delete type=3 #14
-2024/11/03-00:30:05.940 1cdd8 Level-0 table #21: started
-2024/11/03-00:30:05.941 1cdd8 Level-0 table #21: 1485 bytes OK
-2024/11/03-00:30:05.941 1cdd8 Delete type=0 #19
-2024/11/03-00:30:05.942 1cdd8 Manual compaction at level-0 from '!macros!3xTBgseKKhlyAsbc' @ 72057594037927935 : 1 .. '!macros!rjqtnOzo6PaYsVRI' @ 0 : 0; will stop at '!macros!Uywttfo88CcH6koF' @ 9 : 1
-2024/11/03-00:30:05.942 1cdd8 Compacting 1@0 + 1@1 files
-2024/11/03-00:30:05.942 1cdd8 Generated table #22@0: 3 keys, 2168 bytes
-2024/11/03-00:30:05.942 1cdd8 Compacted 1@0 + 1@1 files => 2168 bytes
-2024/11/03-00:30:05.942 1cdd8 compacted to: files[ 0 1 0 0 0 0 0 ]
-2024/11/03-00:30:05.942 1cdd8 Delete type=2 #9
-2024/11/03-00:30:05.942 1cdd8 Delete type=2 #21
-2024/11/03-00:30:05.942 1cdd8 Manual compaction at level-0 from '!macros!Uywttfo88CcH6koF' @ 9 : 1 .. '!macros!rjqtnOzo6PaYsVRI' @ 0 : 0; will stop at (end)
+2024/11/03-17:28:04.212 19740 Recovering log #25
+2024/11/03-17:28:04.213 19740 Delete type=0 #25
+2024/11/03-17:28:04.213 19740 Delete type=3 #23
+2024/11/03-20:11:09.655 2b44 Level-0 table #30: started
+2024/11/03-20:11:09.656 2b44 Level-0 table #30: 1816 bytes OK
+2024/11/03-20:11:09.656 2b44 Delete type=0 #28
+2024/11/03-20:11:09.656 2b44 Manual compaction at level-0 from '!macros!3xTBgseKKhlyAsbc' @ 72057594037927935 : 1 .. '!macros!rjqtnOzo6PaYsVRI' @ 0 : 0; will stop at '!macros!XyaZe7jf6yytQRx4' @ 10 : 1
+2024/11/03-20:11:09.656 2b44 Compacting 1@0 + 1@1 files
+2024/11/03-20:11:09.657 2b44 Generated table #31@0: 3 keys, 2907 bytes
+2024/11/03-20:11:09.657 2b44 Compacted 1@0 + 1@1 files => 2907 bytes
+2024/11/03-20:11:09.657 2b44 compacted to: files[ 0 1 0 0 0 0 0 ]
+2024/11/03-20:11:09.657 2b44 Delete type=2 #22
+2024/11/03-20:11:09.657 2b44 Delete type=2 #30
+2024/11/03-20:11:09.657 2b44 Manual compaction at level-0 from '!macros!XyaZe7jf6yytQRx4' @ 10 : 1 .. '!macros!rjqtnOzo6PaYsVRI' @ 0 : 0; will stop at (end)
