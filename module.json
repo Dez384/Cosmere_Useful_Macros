@@ -14,7 +14,7 @@
   },
   "url": "https://github.com/Dez384/Cosmere_Useful_Macros",
   "manifest": "https://raw.githubusercontent.com/Dez384/Cosmere_Useful_Macros/main/module.json",
-  "download": "https://github.com/Dez384/Cosmere_Useful_Macros/archive/refs/tags/v0.0.2.zip",
+  "download": "https://github.com/Dez384/Cosmere_Useful_Macros/archive/refs/tags/v0.0.3.zip",
   "esmodules": ["world.js"],
   "packs": [
     {
