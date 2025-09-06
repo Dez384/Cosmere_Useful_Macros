@@ -1,0 +1,25 @@
+{
+  "CUM.Initialize": "The Cosmere Useful Macros module is initializing.",
+  "CUM.NoToken": "No tokens are selected.",
+  "CUM.SizeChange": {
+    "title": "Token Size Picker",
+    "label": "New Token Size",
+	"button": "Set Token Size",
+    "small": "Small",
+    "medium": "Medium",
+    "large": "Large",
+    "huge": "Huge",
+    "gargantuan": "Gargantuan"
+  },
+  "CUM.Disposition": {
+    "title": "Token Disposition Picker",
+    "label": "New Token Disposition",
+	"button": "Set Token Disposition",
+    "neutral": "Neutral",
+    "friendly": "Friendly",
+    "hostile": "Hostile",
+    "success1": "Disposition changed successfully for {NAME}.",
+    "success2": "Token ring changed successfully for {NAME}.",
+    "warn": "Token ring not changed on {NAME} due to improper filepath."
+  }
+}
