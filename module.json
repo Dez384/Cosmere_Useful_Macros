@@ -1,32 +1,39 @@
 {
   "id": "cosmere-useful-macros",
   "title": "Cosmere Useful Macros",
-  "description": "A macro compendium to enhance playing the Cosmere RPG.",
+  "description": "A collection of macros to enhance playing the Cosmere RPG on FoundryVTT.",
   "authors": [
     {
       "name": "Dez384"
     }
   ],
-  "version": "0.0.3",
+  "version": "1.0.0",
   "compatibility": {
     "minimum": "12",
-    "verified": "12.330"
+    "verified": "12.343"
   },
   "url": "https://github.com/Dez384/Cosmere_Useful_Macros",
   "manifest": "https://raw.githubusercontent.com/Dez384/Cosmere_Useful_Macros/main/module.json",
-  "download": "https://github.com/Dez384/Cosmere_Useful_Macros/archive/refs/tags/v0.0.3.zip",
-  "esmodules": ["world.js"],
+  "download": "https://github.com/Dez384/Cosmere_Useful_Macros/archive/refs/tags/v1.0.0.zip",
+  "esmodules": ["CUM-index.js"],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
   "packs": [
     {
-      "name": "useful-macros",
-      "label": "Useful Macros",
+      "name": "cosmere-useful-macros",
+      "label": "Cosmere Useful Macros",
       "path": "./packs/macros",
       "type": "Macro"
     }
   ],
   "packFolders": [
     {
-      "name": "Useful Macros",
+      "name": "Cosmere Useful Macros",
       "sorting": "a",
       "packs": ["useful-macros"]
     }
