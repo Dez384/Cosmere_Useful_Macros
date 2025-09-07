@@ -1,5 +1,5 @@
 /**
- * Toggles on or off the `See Invisibility` Detection mode of all selected tokens
+ * Toggles on or off the `See Invisibility` Detection mode for all selected tokens
  **/
  
 export async function See_Invisibility(){

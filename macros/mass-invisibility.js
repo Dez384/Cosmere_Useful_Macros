@@ -1,5 +1,5 @@
 /**
- * Toggles the Invisible condition on or off of all selected tokens
+ * Toggles the Invisible condition on or off for all selected tokens
  **/
  
 export async function Mass_Invisibility(){
