@@ -93,15 +93,25 @@ export async function Config_Bar_Brawl(){
 		}
 	}
 
-	// object for removing the Foundry default second resource bar
-	const origBar2 = {
-		"attribute": null
-	}
-	// warning for if Bar Brawl is not installed	
-
+	// warning for if Bar Brawl is not installed
+	let noMod = true;
+	let modInactive = true;
+	let modStatus = 'CUM.BarBrawl.stat2';
+	let allMods = game.modules;
+	allMods.forEach(check => {
+		if (check.id == "barbrawl") {
+			noMod = false;
+			console.log(check.active);
+			modStatus = 'CUM.BarBrawl.stat1';
+			if (check.active) {
+				modInactive = false;
+			}
+		}
+	})
+	if (noMod || modInactive) {ui.notifications.warn(game.i18n.format('CUM.BarBrawl.warning', {STATUS: game.i18n.localize(modStatus)}))};
 
 	// get all tokens
-		let allTokens = canvas.tokens.controlled;
+	let allTokens = canvas.tokens.controlled;
 
 	if (allTokens.length <1) {
 		ui.notifications.warn(game.i18n.localize('CUM.NoToken'));
@@ -119,15 +129,21 @@ export async function Config_Bar_Brawl(){
 				content: `
 					<div class="form-group">
 						<div class="form-field">
-							<input type="radio" id="only" value="only" name="tokenSelect" checked="true">
-							<label for="only" style="margin-right: 50px">${game.i18n.localize('CUM.BarBrawl.options.selected')} </label>
-							<input type="radio" id="proto" value="proto" name="tokenSelect">
-							<label for="proto">${game.i18n.localize('CUM.BarBrawl.options.prototype')} </label> <br>
-							<br>
-							<input type="radio" id="apply" value="apply" name="changeDirection" checked="true">
-							<label for="apply" style="margin-right: 84px">${game.i18n.localize('CUM.BarBrawl.options.apply')} </label>
-							<input type="radio" id="remove" value="remove" name="changeDirection">
-							<label for="remove">${game.i18n.localize('CUM.BarBrawl.options.remove')} </label> <br>
+							<table>
+								<tr><td>
+								<input type="radio" id="only" value="only" name="tokenSelect" checked="true">
+								<label for="only">${game.i18n.localize('CUM.BarBrawl.options.selected')} </label>
+								</td><td>
+								<input type="radio" id="proto" value="proto" name="tokenSelect">
+								<label for="proto">${game.i18n.localize('CUM.BarBrawl.options.prototype')} </label>
+								</td><tr style="background-color: transparent"><td>
+								<input type="radio" id="apply" value="apply" name="changeDirection" checked="true">
+								<label for="apply">${game.i18n.localize('CUM.BarBrawl.options.apply')} </label>
+								</td><td>
+								<input type="radio" id="remove" value="remove" name="changeDirection">
+								<label for="remove">${game.i18n.localize('CUM.BarBrawl.options.remove')} </label>
+								</td></tr>
+							</table>
 						</div>
 					</div>
 				`,
@@ -177,17 +193,27 @@ export async function Config_Bar_Brawl(){
 			if (opApply == false) {				
 					
 				// remove barbrawl from token
-				token.document.update({'flags.barbrawl.resourceBars': null});
+				token.document.update({'flags.barbrawl.resourceBars.bar2.attribute': null});
+				token.document.update({'flags.barbrawl.resourceBars.bar3.attribute': null});
 				
-				// revert bar2
-				token.document.update({'bar2': origBar2});					
+				// revert bars
+				token.document.update({
+					'bar1.attribute': 'resources.hea',
+					'bar2.attribute': null,
+					"displayBars": 20
+				});					
 				
 				// if remove from prototype token
 				if (opSelect) {
 					// remove barbrawl from token
-						token.document.actor.prototypeToken.update({'flags.barbrawl.resourceBars': null});
+						token.document.actor.prototypeToken.update({'flags.barbrawl.resourceBars.bar2.attribute': null});
+						token.document.actor.prototypeToken.update({'flags.barbrawl.resourceBars.bar3.attribute': null});
 					// revert bar2
-						token.document.actor.prototypeToken.update({'bar2': origBar2});
+						token.document.actor.prototypeToken.update({
+							'bar1.attribute': 'resources.hea',
+							'bar2.attribute': null,
+							"displayBars": 20
+						});
 				}
 			console.log(game.i18n.format('CUM.BarBrawl.success.R',{NAME: token.document.name, AND: game.i18n.localize(message)}));
 			}				

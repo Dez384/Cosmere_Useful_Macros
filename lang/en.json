@@ -27,6 +27,9 @@
     "failure": "{NAME} had no dun spheres to infuse."
   },
   "CUM.BarBrawl": {
+    "warning": "The BarBrawl module is not {STATUS}.",
+    "stat1": "activated",
+    "stat2": "installed",
     "title": "Token Resource Bar Configuration",
 	"button": "Configure Token",
     "options": {
