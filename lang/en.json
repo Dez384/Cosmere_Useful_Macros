@@ -25,5 +25,34 @@
   "CUM.Infuse": {
     "success": "All of {NAME}'s dun spheres have been infused.",
     "failure": "{NAME} had no dun spheres to infuse."
+  },
+  "CUM.BarBrawl": {
+    "title": "Token Resource Bar Configuration",
+	"button": "Configure Token",
+    "options": {
+      "selected": "Selected Token Only",
+      "prototype": "Selected and Prototype Token",
+      "apply": "Apply Settings",
+      "remove": "Remove Settings"
+    },
+    "success": {
+      "A": "Added BarBrawl bars to {NAME}'s token{AND}.",
+      "R": "Removed BarBrawl bars from {NAME}'s token{AND}.",
+      "2": " and prototype token"
+    }
+  },
+  "CUM.configSense": {
+    "title": "Token Vision Configuration",
+	"button": "Configure Token",
+    "options": {
+      "main": "Main Sense",
+      "senses": "Sense Range",
+      "tremor": "Feel Tremor",
+      "invis": "See Invisibility",
+      "senseAll": "Sense All",
+      "infinite": "Infinite",
+      "disable": "Disabled"
+    },
+    "success": "Token vision configured successfully for {NAME}."
   }
 }

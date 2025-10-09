@@ -35,7 +35,7 @@
     {
       "name": "Cosmere Useful Macros",
       "sorting": "a",
-      "packs": ["useful-macros"]
+      "packs": ["cosmere-useful-macros"]
     }
   ]
 }
