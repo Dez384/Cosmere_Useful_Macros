@@ -79,5 +79,10 @@
       "reduce": "{NAME} reduced their {INJURY} duration to {STAT} remaining days.",
       "clear": "{NAME} cleared their {INJURY}!"
     }
+  },
+  "CUM.useSkill": {
+    "title": "{NAME}'s skills",
+    "invested": "Invested",
+    "done": "Done"
   }
 }
