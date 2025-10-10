@@ -25,5 +25,64 @@
   "CUM.Infuse": {
     "success": "All of {NAME}'s dun spheres have been infused.",
     "failure": "{NAME} had no dun spheres to infuse."
+  },
+  "CUM.BarBrawl": {
+    "warning": "The BarBrawl module is not {STATUS}.",
+    "stat1": "activated",
+    "stat2": "installed",
+    "title": "Token Resource Bar Configuration",
+	"button": "Configure Token",
+    "options": {
+      "selected": "Selected Token Only",
+      "prototype": "Selected and Prototype Token",
+      "apply": "Apply Settings",
+      "remove": "Remove Settings"
+    },
+    "success": {
+      "A": "Added BarBrawl bars to {NAME}'s token{AND}.",
+      "R": "Removed BarBrawl bars from {NAME}'s token{AND}.",
+      "2": " and prototype token"
+    }
+  },
+  "CUM.configSense": {
+    "title": "Token Vision Configuration",
+	"button": "Configure Token",
+    "options": {
+      "main": "Main Sense",
+      "senses": "Sense Range",
+      "tremor": "Feel Tremor",
+      "invis": "See Invisibility",
+      "senseAll": "Sense All",
+      "infinite": "Infinite",
+      "disable": "Disabled"
+    },
+    "success": "Token vision configured successfully for {NAME}."
+  },
+  "CUM.GroupRest": {
+    "title": "Group Long Rest",
+	"button": "Apply Long Rest",
+    "options": {
+      "tokens": "Selected Tokens",
+      "characters": "All Characters",
+      "actors": "All Game Actors",
+      "injury": "Reduce Injury Duration?",
+      "invest": "Fill Investiture?",
+      "exhaust": "Reduce Exhaustion?"
+    },
+    "longrest": "{NAME} took a Long Rest.",
+	"exhaust": {
+      "reduce": "{NAME} reduced their Exhaustion to {STAT}.",
+      "clear": "{NAME} cleared their Exhaustion!"
+    },
+	"invest": "{NAME} filled their investiture.",
+	"injury": {
+      "reduce": "{NAME} reduced their {INJURY} duration to {STAT} remaining days.",
+      "clear": "{NAME} cleared their {INJURY}!"
+    }
+  },
+  "CUM.useSkill": {
+    "title": "{NAME}'s skills",
+    "invested": "Invested",
+    "done": "Done"
   }
 }
