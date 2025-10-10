@@ -6,6 +6,7 @@ import { Token_Disposition_Picker } from "./macros/token-disposition.js";
 import { Infuse_Dun_Spheres } from "./macros/infuse-dun.js";
 import { Config_Bar_Brawl } from "./macros/config-bar-brawl.js";
 import { Config_Senses } from "./macros/config-senses.js";
+import { Group_Long_Rest } from "./macros/group-long-rest.js";
 
 // make an object of the macros
 const CUMmacros = { 
@@ -15,7 +16,8 @@ const CUMmacros = {
 	Disposition: Token_Disposition_Picker,
 	Infuse_Dun: Infuse_Dun_Spheres,
 	Bar_Brawl: Config_Bar_Brawl,
-	Config_Senses: Config_Senses
+	Config_Senses: Config_Senses,
+	Group_LR: Group_Long_Rest
 	};
 
 // In the initialization hook, globally expose the object of macros

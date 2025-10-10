@@ -57,5 +57,27 @@
       "disable": "Disabled"
     },
     "success": "Token vision configured successfully for {NAME}."
+  },
+  "CUM.GroupRest": {
+    "title": "Group Long Rest",
+	"button": "Apply Long Rest",
+    "options": {
+      "tokens": "Selected Tokens",
+      "characters": "All Characters",
+      "actors": "All Game Actors",
+      "injury": "Reduce Injury Duration?",
+      "invest": "Fill Investiture?",
+      "exhaust": "Reduce Exhaustion?"
+    },
+    "longrest": "{NAME} took a Long Rest.",
+	"exhaust": {
+      "reduce": "{NAME} reduced their Exhaustion to {STAT}.",
+      "clear": "{NAME} cleared their Exhaustion!"
+    },
+	"invest": "{NAME} filled their investiture.",
+	"injury": {
+      "reduce": "{NAME} reduced their {INJURY} duration to {STAT} remaining days.",
+      "clear": "{NAME} cleared their {INJURY}!"
+    }
   }
 }
