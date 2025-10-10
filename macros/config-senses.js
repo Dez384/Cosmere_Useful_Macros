@@ -90,14 +90,6 @@ export async function Config_Senses(){
 						action: 'submit',
 						callback: (event, button, html) => {
 							const form = $(html).find('form')[0];
-/**							const optionSelect = {
-								"lightPerception": form.lightPerception.value,
-								"basicSight": form.basicSight.value,
-								"seeInvisibility": form.seeInvisibility.value,
-								"feelTremor": form.feelTremor.value,
-								"senseAll": form.senseAll.value
-							};
-**/
 							let optionSelect = {};
 							Object.keys(tokenSenses).forEach(j => {
 								optionSelect[j] = form[j].value;
