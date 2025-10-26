@@ -51,14 +51,14 @@ export async function Group_Long_Rest(){
 				{
 					label: game.i18n.localize('CUM.GroupRest.button'),
 					action: 'submit',
-					callback: (event, button, html) => {
-						const form = $(html).find('form')[0];
+					callback: (event, button) => {
+						const data = button.form.elements;
 
 						let optionSelect = {
-							"scope": form.actorScope.value,
-							"injury": form.injury.checked,
-							"invest": form.invest.checked,
-							"exhaust": form.exhaust.checked
+							"scope": data.actorScope.value,
+							"injury": data.injury.checked,
+							"invest": data.invest.checked,
+							"exhaust": data.exhaust.checked
 						}							
 
 						resolve({ optionSelect });
@@ -148,34 +148,4 @@ export async function Group_Long_Rest(){
 		
 	} //end for actor loop
 
-
-
-
-
-
-
-
-
-
-
-
 }// end function
-
-
-/**
-////////////////////////original submission
-  //This triggers a Long Rest for all actors, plus refills Investiture to full.
-		for (actor of game.actors) {
-			await actor.longRest({dialog:false});
-			await actor.update({
-				'system.resources.inv.value': actor.system.resources.inv.max.value
-				});
-				let exh = actor.appliedEffects.filter(x => x.name.substring(0,9) == "Exhausted");
-				for (eff of exh) 
-					let newStacks = eff.stacks-1;
-						if (newStacks == 0) actor.toggleStatusEffect("exhausted", {active:false});
-							else await eff.update({'system.stacks': newStacks});
-							}
-							ui.notifications.info("Everyone has a long rest!");
-							
-**/
