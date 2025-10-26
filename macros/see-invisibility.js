@@ -30,10 +30,10 @@ export async function See_Invisibility(){
 
 			const sight = src.sight;
 
-			if (sight.visionMode === "basic"||sight.visionMode === "darkvision") 
+			if (sight.visionMode === "basic"||sight.visionMode === "darkvision"||sight.visionMode === "sense") 
 				{sight.visionMode = "lightAmplification"; }
 			else if (sight.visionMode === "lightAmplification")
-				{sight.visionMode = "basic"; }
+				{sight.visionMode = "sense"; }
 
 			token.document.update({
 				"detectionModes": detectionModes,
