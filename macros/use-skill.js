@@ -3,20 +3,26 @@
 **/
 
 export async function Use_Skill() {
-
+	
+	// get all controlled tokens
 	let allTokens = canvas.tokens.controlled;
 	
+	//check to see if any tokens are actually selected
 	if (allTokens.length <1) {
 		ui.notifications.warn(game.i18n.localize('CUM.NoToken'));
-	} else {
-
+	} 
+	// code to execute if there is at least one token selected
+	else {
+		
+		//this macro chooses only the first token selected
 		let actor= allTokens[0].actor;
 		let token= allTokens[0];
 			
 		const Physical = ['agi', 'ath', 'hwp', 'lwp', 'stl', 'thv'];
 		const Cognitive = ['cra', 'ded', 'dis', 'inm', 'lor', 'med'];
 		const Spiritual = ['dec', 'ins', 'lea', 'prc', 'prs', 'sur'];
-
+		
+		//function to dynamically create an actor's skill list
 		function getSkillList(actor) {
 			let skills = {Physical: [], Cognitive: [], Spiritual: [], Invested: []};
 			for (let skillKey in actor.system.skills) {
@@ -32,39 +38,51 @@ export async function Use_Skill() {
 				}
 			}
 			return skills;
-		}
-
+		}  //end of function getSkillList
+		
+		//function to generate pop-up dialog
 		async function getDialog(token, actor) {
+
+			//generate HTML and push data actions to dialog object
 			let skills = getSkillList(actor);
 			let toHtml = "";
-		toHtml += '<div class="flexrow" style="align-items: flex-start">'
+			
+			toHtml += '<div class="flexrow" style="align-items: flex-start">'
+			//loop through each category of skills in the skill list
 			for (let category in skills) {
 				let skillList = skills[category];
-
 				if (skillList.length > 0) {
 					toHtml +='<div class="flexcol">';
-					toHtml += `<h4>${category}</strong></h4>`;
+					toHtml += `<h4 style="align-self: center">${category}</strong></h4>`;
 					for (let skill of skillList) {
-						toHtml += `<a class="name" id="${skill.key}" onclick="game.actors.get('${actor._id}').rollSkill('${skill.key}')">${skill.name} (+${actor.getSkillMod(skill.key)})</a>`;
+						toHtml += `<button type="button" class="name" data-skill=="${skill.key}" id="${skill.key}">${skill.name} (+${actor.getSkillMod(skill.key)})</button>`;
 					}
 					toHtml += '</div>';
 				}
 			}
 			toHtml +='</div>';
+
+			// Create Dialog object
 			let dialogObject = {
 				window: {title: game.i18n.format('CUM.useSkill.title',{NAME: token.name})},
 				position: {width: 600},
 				content: toHtml,
-				ok: { label: game.i18n.localize('CUM.useSkill.done') }
+				ok: { label: game.i18n.localize('CUM.useSkill.done') },
+				render: (_event, app) => {
+					const html = app.element;
+					html.querySelectorAll("button.name").forEach(e => {
+						e.addEventListener("click", ()=>{
+							actor.rollSkill(e.id);
+						});
+					});
+				}
 			}
+			
 			return await foundry.applications.api.DialogV2.prompt(dialogObject);
-		}
-		if (actor == null) {
-			ui.notifications.warn(game.i18n.localize('CUM.NoToken'));
-			}
-			else {
-				getDialog(token, actor);
-			}
+		}  //end function getDialog
+
+		//call function to get dialog
+		getDialog(token, actor);
 
 	} //end no token else
 		
