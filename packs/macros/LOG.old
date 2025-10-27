@@ -1,5 +1,12 @@
-2025/10/27-09:44:39.381 29b8c Log #8: 0 ops saved to Table #11 OK
-2025/10/27-09:44:39.381 29b8c Archiving ..\Data\modules\cosmere-useful-macros\packs\macros/000008.log: OK
-2025/10/27-09:44:39.390 29b8c Table #10: 9 entries OK
-2025/10/27-09:44:39.391 29b8c Archiving ..\Data\modules\cosmere-useful-macros\packs\macros/MANIFEST-000006: OK
-2025/10/27-09:44:39.391 29b8c **** Repaired leveldb ..\Data\modules\cosmere-useful-macros\packs\macros; recovered 1 files; 3383 bytes. Some data may have been lost. ****
+2025/10/27-09:44:39.395 29b8c Delete type=3 #1
+2025/10/27-09:49:46.493 27a8c Level-0 table #15: started
+2025/10/27-09:49:46.501 27a8c Level-0 table #15: 3639 bytes OK
+2025/10/27-09:49:46.501 27a8c Delete type=0 #13
+2025/10/27-09:49:46.503 27a8c Manual compaction at level-0 from '!macros!9lqTZHv7r1KHTiCD' @ 72057594037927935 : 1 .. '!macros!xebIlQuyd7uYvCha' @ 0 : 0; will stop at '!macros!xebIlQuyd7uYvCha' @ 33 : 1
+2025/10/27-09:49:46.503 27a8c Compacting 2@0 + 0@1 files
+2025/10/27-09:49:46.504 27a8c Generated table #16@0: 10 keys, 3639 bytes
+2025/10/27-09:49:46.504 27a8c Compacted 2@0 + 0@1 files => 3639 bytes
+2025/10/27-09:49:46.504 27a8c compacted to: files[ 0 1 0 0 0 0 0 ]
+2025/10/27-09:49:46.504 27a8c Delete type=2 #10
+2025/10/27-09:49:46.505 27a8c Delete type=2 #15
+2025/10/27-09:49:46.505 27a8c Manual compaction at level-0 from '!macros!xebIlQuyd7uYvCha' @ 33 : 1 .. '!macros!xebIlQuyd7uYvCha' @ 0 : 0; will stop at (end)

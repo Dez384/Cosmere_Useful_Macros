@@ -2,6 +2,9 @@
 This module is a collection of Macros that is intended to be used for the Cosmere RPG system on FoundryVTT. This module adds a Macro Compendium with macros that can be added to the FoundryVTT hotbar. Each macro calls functions from the module itself, so once imported, the macros will never need to be re-imported when the module updates.
 
 ## List of Macros
+### 0. <ins>Master Useful Macro</ins>
+* This macro will create a pop-up dialog box that will allow you to use every other macro in the module.
+
 ### 1. <ins>Token Disposition Picker</ins>
 * This macro will change the __token disposition__ of all selected tokens between _Neutral_, _Friendly_, or _Hostile_ depending on the option chosen in a pop-up dialog box. 
 * If this macro is used on a token from an official Cosmere RPG module, the color of the token ring will change to match the new disposition: gold for Neutral, Blue for Friendly, and red for Hostile.
@@ -51,7 +54,7 @@ https://github.com/user-attachments/assets/131a5581-148e-4b62-9a12-ffbd759dea1e
  * This macro provides a pop-up dialog that will list all of a selected token's skills. Clicking on a skill will use it as if the skill were used from the character sheet.
  * _This macro will only work when using the **Cosmere RPG** game system._
   
-### 9. <ins>Nonlethal Defeat</ins>
+### 10. <ins>Nonlethal Defeat</ins>
  * This macro will apply the defeated marker to all selected tokens if they are in combat and will apply the Unconcious condition with a large overlay. Using the macro again on tokens will remove the defeated marker and the Unconcious condition.
   
 ## Contributing

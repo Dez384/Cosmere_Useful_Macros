@@ -1,6 +1,20 @@
 {
   "CUM.Initialize": "The Cosmere Useful Macros module is initializing.",
   "CUM.NoToken": "No tokens are selected.",
+  "CUM.Title": "Cosmere Useful Macros",
+  "CUM.macroLabels": {
+    "Mass_Invis": "Mass Invisibility",
+    "See_Invis": "See Invisibility",
+    "Size_Pick": "Size Picker",
+    "Disposition": "Token Disposition Picker",
+    "Infuse_Dun": "Infuse Dun Spheres",
+    "Bar_Brawl": "Configure Token with BarBrawl",
+    "Config_Senses": "Configure Token Senses",
+    "Group_LR": "Group Long Rest",
+    "Use_Skill": "Use Token Skill",
+    "Nonlethal_Defeat": "Nonlethal Defeat",
+    "master": "Master Useful Macro"
+  },
   "CUM.SizeChange": {
     "title": "Token Size Picker",
     "label": "New Token Size",

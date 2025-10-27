@@ -60,7 +60,7 @@ export async function Use_Skill() {
 						} 
 					} else {
 						for (let skill of skillList) {
-						toHtml += `<button type="button" class="name" id="${skill.key}" onclick="game.actors.get('${actor._id}').rollSkill('${skill.key}')">${skill.name} (+${actor.getSkillMod(skill.key)})</a>`;
+						toHtml += `<button type="button" class="name" id="${skill.key}" onclick="game.actors.get('${actor._id}').rollSkill('${skill.key}')">${skill.name} (+${actor.getSkillMod(skill.key)})</button>`;
 						}
 					}
 

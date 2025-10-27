@@ -9,6 +9,7 @@ import { Config_Senses } from "./macros/config-senses.js";
 import { Group_Long_Rest } from "./macros/group-long-rest.js";
 import { Use_Skill } from "./macros/use-skill.js";
 import { Nonlethal_Defeat } from "./macros/nonlethal-defeat.js";
+import { Master_Macro } from "./macros/master-macro.js";
 
 // make an object of the macros
 const CUMmacros = { 
@@ -21,7 +22,23 @@ const CUMmacros = {
 	Config_Senses: Config_Senses,
 	Group_LR: Group_Long_Rest,
 	Use_Skill: Use_Skill,
-	Nonlethal_Defeat: Nonlethal_Defeat
+	Nonlethal_Defeat: Nonlethal_Defeat,
+	master: Master_Macro
+	};
+	
+// a list of the title of each macro
+const CUMlabels = { 
+	Mass_Invis: "CUM.macroLabels.Mass_Invis",
+	See_Invis: "CUM.macroLabels.See_Invis",
+	Size_Pick: "CUM.macroLabels.Size_Pick",
+	Disposition: "CUM.macroLabels.Disposition",
+	Infuse_Dun: "CUM.macroLabels.Infuse_Dun",
+	Bar_Brawl: "CUM.macroLabels.Bar_Brawl",
+	Config_Senses: "CUM.macroLabels.Config_Senses",
+	Group_LR: "CUM.macroLabels.Group_LR",
+	Use_Skill: "CUM.macroLabels.Use_Skill",
+	Nonlethal_Defeat: "CUM.macroLabels.Nonlethal_Defeat",
+	master: "CUM.macroLabels.master"
 	};
 
 // In the initialization hook, globally expose the object of macros
@@ -29,6 +46,9 @@ const CUMmacros = {
 Hooks.once("init", async () => {
 	console.info(game.i18n.localize('CUM.Initialize'));
 
-	globalThis.CUM = Object.assign({ macros: CUMmacros });
+	globalThis.CUM = Object.assign({ 
+		macros: CUMmacros,
+		labels: CUMlabels
+	});
 
 }); //end init hook
