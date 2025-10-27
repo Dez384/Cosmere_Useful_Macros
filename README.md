@@ -47,9 +47,12 @@ https://github.com/user-attachments/assets/131a5581-148e-4b62-9a12-ffbd759dea1e
  * A chat message will appear in the chat log for each character that takes a Long Rest.
  * _This macro will only work when using the **Cosmere RPG** game system._
 
- ### 9. <ins>Use Token Skill</ins>
-  * This macro provides a pop-up dialog that will list all of a selected token's skills. Clicking on a skill will use it as if the skill were used from the character sheet.
-  * _This macro will only work when using the **Cosmere RPG** game system._
+### 9. <ins>Use Token Skill</ins>
+ * This macro provides a pop-up dialog that will list all of a selected token's skills. Clicking on a skill will use it as if the skill were used from the character sheet.
+ * _This macro will only work when using the **Cosmere RPG** game system._
+  
+### 9. <ins>Nonlethal Defeat</ins>
+ * This macro will apply the defeated marker to all selected tokens if they are in combat and will apply the Unconcious condition with a large overlay. Using the macro again on tokens will remove the defeated marker and the Unconcious condition.
   
 ## Contributing
 To contribute a macro to this repository:
@@ -59,7 +62,7 @@ To contribute a macro to this repository:
 4. Create a macro in FoundryVTT that calls the function and add it to the module's compendium.
 
 ## Credits
-* Discord user __Dex Sinister__ submitted the initial code for the _Group Long Rest_ and _Use Token Skill_ macros.
+* Discord user __Dex Sinister__ submitted the initial code for the _Group Long Rest_, _Use Token Skill_, and _Nonlethal Defeat_ macros.
 * Video examples were taken using the [Cosmere RPG: Stormlight Bridge Nine Adventure](https://foundryvtt.com/packages/cosmere-rpg-stormlight-bridge-nine) by Brotherwise Games
 * The image icon for _Token Disposition Picker_ was made by Dez384
 
