@@ -54,9 +54,16 @@ export async function Use_Skill() {
 				if (skillList.length > 0) {
 					toHtml +='<div class="flexcol">';
 					toHtml += `<h4 style="align-self: center">${category}</strong></h4>`;
-					for (let skill of skillList) {
-						toHtml += `<button type="button" class="name" data-skill=="${skill.key}" id="${skill.key}">${skill.name} (+${actor.getSkillMod(skill.key)})</button>`;
+					if (foundry.utils.isNewerVersion(game.version,13)) {
+						for (let skill of skillList) {
+							toHtml += `<button type="button" class="name" data-skill=="${skill.key}" id="${skill.key}">${skill.name} (+${actor.getSkillMod(skill.key)})</button>`;
+						} 
+					} else {
+						for (let skill of skillList) {
+						toHtml += `<button type="button" class="name" id="${skill.key}" onclick="game.actors.get('${actor._id}').rollSkill('${skill.key}')">${skill.name} (+${actor.getSkillMod(skill.key)})</a>`;
+						}
 					}
+
 					toHtml += '</div>';
 				}
 			}
@@ -67,17 +74,25 @@ export async function Use_Skill() {
 				window: {title: game.i18n.format('CUM.useSkill.title',{NAME: token.name})},
 				position: {width: 600},
 				content: toHtml,
-				ok: { label: game.i18n.localize('CUM.useSkill.done') },
-				render: (_event, app) => {
-					const html = app.element;
-					html.querySelectorAll("button.name").forEach(e => {
-						e.addEventListener("click", ()=>{
-							actor.rollSkill(e.id);
-						});
-					});
-				}
+				ok: { label: game.i18n.localize('CUM.useSkill.done') }
 			}
 			
+			//if Foundryv13, add render property
+			if (foundry.utils.isNewerVersion(game.version,13)) {
+				let newRender = {
+					render: (_event, app) => {
+						const html = app.element;
+						html.querySelectorAll("button.name").forEach(e => {
+							e.addEventListener("click", ()=>{
+								actor.rollSkill(e.id);
+							});
+						});
+					}
+				}
+					
+				dialogObject.render = newRender.render;
+			}
+
 			return await foundry.applications.api.DialogV2.prompt(dialogObject);
 		}  //end function getDialog
 
