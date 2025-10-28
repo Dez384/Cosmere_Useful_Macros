@@ -1,15 +1,14 @@
-2025/10/10-14:25:44.353 17c5c Recovering log #4
-2025/10/10-14:25:44.355 17c5c Delete type=0 #4
-2025/10/10-14:25:44.355 17c5c Delete type=3 #2
-2025/10/10-15:02:04.361 2b980 Level-0 table #9: started
-2025/10/10-15:02:04.362 2b980 Level-0 table #9: 6318 bytes OK
-2025/10/10-15:02:04.362 2b980 Delete type=0 #7
-2025/10/10-15:02:04.362 2b980 Manual compaction at level-0 from '!macros!9lqTZHv7r1KHTiCD' @ 72057594037927935 : 1 .. '!macros!xebIlQuyd7uYvCha' @ 0 : 0; will stop at (end)
-2025/10/10-15:02:04.362 2b980 Manual compaction at level-1 from '!macros!9lqTZHv7r1KHTiCD' @ 72057594037927935 : 1 .. '!macros!xebIlQuyd7uYvCha' @ 0 : 0; will stop at '!macros!xebIlQuyd7uYvCha' @ 18 : 1
-2025/10/10-15:02:04.362 2b980 Compacting 1@1 + 1@2 files
-2025/10/10-15:02:04.363 2b980 Generated table #10@1: 9 keys, 3383 bytes
-2025/10/10-15:02:04.363 2b980 Compacted 1@1 + 1@2 files => 3383 bytes
-2025/10/10-15:02:04.363 2b980 compacted to: files[ 0 0 1 0 0 0 0 ]
-2025/10/10-15:02:04.363 2b980 Delete type=2 #5
-2025/10/10-15:02:04.364 2b980 Delete type=2 #9
-2025/10/10-15:02:04.365 2b980 Manual compaction at level-1 from '!macros!xebIlQuyd7uYvCha' @ 18 : 1 .. '!macros!xebIlQuyd7uYvCha' @ 0 : 0; will stop at (end)
+2025/10/27-16:03:14.621 2cdcc Recovering log #14
+2025/10/27-16:03:14.627 2cdcc Delete type=0 #14
+2025/10/27-16:03:14.627 2cdcc Delete type=3 #12
+2025/10/27-16:08:24.179 298bc Level-0 table #20: started
+2025/10/27-16:08:24.187 298bc Level-0 table #20: 1006 bytes OK
+2025/10/27-16:08:24.187 298bc Delete type=0 #18
+2025/10/27-16:08:24.187 298bc Manual compaction at level-0 from '!macros!9lqTZHv7r1KHTiCD' @ 72057594037927935 : 1 .. '!macros!xebIlQuyd7uYvCha' @ 0 : 0; will stop at '!macros!lF73p2sRAUAAbgvh' @ 46 : 1
+2025/10/27-16:08:24.187 298bc Compacting 1@0 + 1@1 files
+2025/10/27-16:08:24.189 298bc Generated table #21@0: 11 keys, 4416 bytes
+2025/10/27-16:08:24.189 298bc Compacted 1@0 + 1@1 files => 4416 bytes
+2025/10/27-16:08:24.189 298bc compacted to: files[ 0 1 0 0 0 0 0 ]
+2025/10/27-16:08:24.189 298bc Delete type=2 #16
+2025/10/27-16:08:24.189 298bc Delete type=2 #20
+2025/10/27-16:08:24.190 298bc Manual compaction at level-0 from '!macros!lF73p2sRAUAAbgvh' @ 46 : 1 .. '!macros!xebIlQuyd7uYvCha' @ 0 : 0; will stop at (end)

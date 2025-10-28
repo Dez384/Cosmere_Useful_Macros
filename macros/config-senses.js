@@ -88,11 +88,11 @@ export async function Config_Senses(){
 					{
 						label: game.i18n.localize('CUM.configSense.button'),
 						action: 'submit',
-						callback: (event, button, html) => {
-							const form = $(html).find('form')[0];
+						callback: (event, button) => {
+							const data = button.form.elements;
 							let optionSelect = {};
 							Object.keys(tokenSenses).forEach(j => {
-								optionSelect[j] = form[j].value;
+								optionSelect[j] = data[j].value;
 							})
 							
 							resolve({ optionSelect });
@@ -103,12 +103,15 @@ export async function Config_Senses(){
 		})); //end dialogue box
 
 		//iterate through all selected tokens
-		allTokens.forEach(token => {
+		for (let token of allTokens) {
 			
 			let detectionModes = token.document.detectionModes;
+			let sight = token.document.sight;
+			sight.visionMode = "sense";
 			
 			//create object with which to update token
 			Object.keys(result.optionSelect).forEach(k => {
+
 				let needsMode = true;
 				// if vision modes exist on token disable needsMode
 				detectionModes.forEach(mode => {
@@ -130,39 +133,57 @@ export async function Config_Senses(){
 						if (result.optionSelect[k] == "false") {
 							
 							mode2.enabled = false;
+							//if sense range is disabled, set vision to zero
+							if (k === "basicSight") {
+								sight.range = 0;
+							}
+							
 						}
 						else { 
 							mode2.enabled = true;
 						}
 						
-						//if range is infinite, set range to null
+						//if range is infinite, set range to arbitrarily large number 
+						//Foundry v13 doesn't like null anymore for infinity
 						if (result.optionSelect[k] == "null") {
-							mode2.range = null;
+							mode2.range = 999;
+							//if sense range is infinite, set vision to arbitrarily large number
+							if (k === "basicSight") {
+								sight.range = 999;
+							}
+							
 						}
 						
 						//if range is senses, set to senses
 						if (result.optionSelect[k] == "senses") {
+							//get actor sense range
+							let actorSenses = 0;
 							if (token.actor.system.senses.range.useOverride) {
-								mode2.range = token.actor.system.senses.range.override;
+								actorSenses = token.actor.system.senses.range.override;
+
 							} else {
-								mode2.range = token.actor.system.senses.range.derived;
+								actorSenses = token.actor.system.senses.range.derived;
+
+							}
+							//set range to senses
+							mode2.range = actorSenses;
+							//if sense range is senses, set vision to actor senses range
+							if (k === "basicSight") {
+								sight.range = actorSenses;
 							}
 						}
-					}
-					
-					
+					} //end mode2 loop
 					
 				})
 			})
 	
 			//update token
-			token.document.update({"detectionModes": detectionModes});			
+			await token.document.update({"detectionModes": detectionModes, "sight": sight});			
 			
 			//notify that vision has been changed
-			console.log(game.i18n.format('CUM.configSense.success', {NAME: token.document.name}));
 			ui.notifications.notify(game.i18n.format('CUM.configSense.success', {NAME: token.document.name}));
 			
-		}); //end for allTokens
+		} //end for allTokens
 
 	} //end else from having tokens selected
 };

@@ -36,11 +36,8 @@
 					{
 						label: game.i18n.localize('CUM.Disposition.button'),
 						action: 'submit',
-						callback: (event, button, html) => {
-							const form = $(html).find('form')[0];
-
-							const nextDisp = form.NewDisp.value;
-
+						callback: (event, button) => {
+							const nextDisp = button.form.elements.NewDisp.value;
 							resolve({ nextDisp });
 						}
 					}
@@ -81,29 +78,23 @@
 			
 			// create a new file path for token image
 			let newIMG = prefix+midPath+suffix;
+			
 			// verify that the new filepath points to a valid file, and if it does, change the token image
-			let goodIMG = await srcExists(newIMG);
+			let goodIMG;
+			if (foundry.utils.isNewerVersion(game.version,13)) {
+				goodIMG = await foundry.canvas.srcExists(newIMG);
+			} else {
+				goodIMG = await srcExists(newIMG);
+			}
+			
 			if (goodIMG) {			
 				token.document.update({"texture.src": newIMG});
 				console.log(game.i18n.format('CUM.Disposition.success2',{NAME: token.document.name}));
 			} else {
 				console.warn(game.i18n.format('CUM.Disposition.warn',{NAME: token.document.name}));
 			}
-		
-
-			
 
 		} //end for..of loop
 
 	}
  };
- 
- /**
-  async function checkIMG(filepath) {
-	 let isGood = await srcExists(filepath);
-	 console.log(isGood);
-	 if (isGood) {return true;}
-	 else {return false;}
-	 //return isGood;
- }
- **/

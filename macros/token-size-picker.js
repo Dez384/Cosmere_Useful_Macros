@@ -36,10 +36,8 @@
 					{
 						label: game.i18n.localize('CUM.SizeChange.button'),
 						action: 'submit',
-						callback: (event, button, html) => {
-							const form = $(html).find('form')[0];
-
-							const nextSize = form.NewSize.value;
+						callback: (event, button) => {
+							const nextSize = button.form.elements.NewSize.value;
 
 							resolve({ nextSize });
 						}
@@ -50,7 +48,8 @@
 
 		//update tokens with result of dialog
 		allTokens.forEach(token => {
-			token.document.update({"width": result.nextSize, "height": result.nextSize});
+			let nextNumber = Number(result.nextSize);
+			token.document.update({"width": nextNumber, "height": nextNumber});
 		});
 
 	}

@@ -101,7 +101,6 @@ export async function Config_Bar_Brawl(){
 	allMods.forEach(check => {
 		if (check.id == "barbrawl") {
 			noMod = false;
-			console.log(check.active);
 			modStatus = 'CUM.BarBrawl.stat1';
 			if (check.active) {
 				modInactive = false;
@@ -152,10 +151,9 @@ export async function Config_Bar_Brawl(){
 					{
 						label: game.i18n.localize('CUM.BarBrawl.button'),
 						action: 'submit',
-						callback: (event, button, html) => {
-							const form = $(html).find('form')[0];
-							const optionSelect = form.tokenSelect.value;
-							const optionApply = form.changeDirection.value;
+						callback: (event, button) => {
+							const optionSelect = button.form.elements.tokenSelect.value;
+							const optionApply = button.form.elements.changeDirection.value;
 
 							resolve({ optionSelect,optionApply });
 						}
@@ -179,11 +177,11 @@ export async function Config_Bar_Brawl(){
 			if (opApply) {
 				
 				// add barbrawl to token
-				token.document.update({'flags.barbrawl.resourceBars': coolBars});				
+				await token.document.update({'flags.barbrawl.resourceBars': coolBars});				
 				
 				// if apply to prototype token
 				if (opSelect){
-					token.document.actor.prototypeToken.update({'flags.barbrawl.resourceBars': coolBars});
+					await token.document.actor.prototypeToken.update({'flags.barbrawl.resourceBars': coolBars});
 				}
 
 			console.log(game.i18n.format('CUM.BarBrawl.success.A',{NAME: token.document.name, AND: game.i18n.localize(message)}));
@@ -192,12 +190,15 @@ export async function Config_Bar_Brawl(){
 			// if remove configuration			
 			if (opApply == false) {				
 					
-				// remove barbrawl from token
-				token.document.update({'flags.barbrawl.resourceBars.bar2.attribute': null});
-				token.document.update({'flags.barbrawl.resourceBars.bar3.attribute': null});
+				// to prevent BarBrawl default behavior, first add the custom bars
+				await token.document.update({'flags.barbrawl.resourceBars': coolBars});
+				// remove bars 2 and 3; bar 1 is already system default
+				await token.document.update({
+					'flags.barbrawl.resourceBars.bar2.attribute': null, 'flags.barbrawl.resourceBars.bar3.attribute': null
+				});
 				
 				// revert bars
-				token.document.update({
+				await token.document.update({
 					'bar1.attribute': 'resources.hea',
 					'bar2.attribute': null,
 					"displayBars": 20
@@ -205,15 +206,20 @@ export async function Config_Bar_Brawl(){
 				
 				// if remove from prototype token
 				if (opSelect) {
+					// to prevent BarBrawl default behavior, first add the custom bars
+					await token.document.actor.prototypeToken.update({'flags.barbrawl.resourceBars': coolBars});
 					// remove barbrawl from token
-						token.document.actor.prototypeToken.update({'flags.barbrawl.resourceBars.bar2.attribute': null});
-						token.document.actor.prototypeToken.update({'flags.barbrawl.resourceBars.bar3.attribute': null});
-					// revert bar2
-						token.document.actor.prototypeToken.update({
-							'bar1.attribute': 'resources.hea',
-							'bar2.attribute': null,
-							"displayBars": 20
-						});
+					await token.document.actor.prototypeToken.update({
+						'flags.barbrawl.resourceBars.bar2.attribute': null,
+						'flags.barbrawl.resourceBars.bar3.attribute': null
+					});
+						
+					// revert bars
+					await token.document.actor.prototypeToken.update({
+						'bar1.attribute': 'resources.hea',
+						'bar2.attribute': null,
+						"displayBars": 20
+					});
 				}
 			console.log(game.i18n.format('CUM.BarBrawl.success.R',{NAME: token.document.name, AND: game.i18n.localize(message)}));
 			}				
