@@ -60,8 +60,8 @@ https://github.com/user-attachments/assets/131a5581-148e-4b62-9a12-ffbd759dea1e
 ## Contributing
 To contribute a macro to this repository:
 1. Add the macro code in a function as a seperate `.js` file in the `/macros` folder
-2. Add a line to `CUM-index.js` to import the function
-3. Add the function to the object in `CUM-index.js` that gets globalized
+2. Add a line in `CUM-index.js` to add the new macro to the object that lists all of the macros
+3. Add the name of the macro to the language files in the `/lang` folder
 4. Create a macro in FoundryVTT that calls the function and add it to the module's compendium.
 
 ## Credits
