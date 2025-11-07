@@ -12,18 +12,18 @@ const CUMlist = {
 	Nonlethal_Defeat: "Nonlethal_Defeat",
 	Mass_Invis: "Mass_Invisibility",
 	See_Invis: "See_Invisibility",
-	Change_Shardblade: "Change_Shardblade"
+	Change_Shardblade: "Change_Shardblade",
+	Improvise_Weapon: "Improvise_Weapon",
+	Drain_Spheres: "Drain_Spheres"
 	};
 
 //import all of the macros and assign them to an object
 const CUMmacros = {};
 for (let macro in CUMlist ){
 	let path = "./macros/"+macro+".js";
-	console.log(path);
 	//import { CUMmacros[macro] } from `${path}`;
 	await import (`./macros/${macro}.js`)
 		.then(module=> {
-			console.log(module[CUMlist[macro]]);
 			CUMmacros[macro] = module[CUMlist[macro]];
 		});
 }
