@@ -45,6 +45,27 @@
 		 
 	 }//end nonSpecialMelee
 	 
+	 // function to remove special and improvised weapons from a collection of CosmereItem weapons
+	 static async nonSpecialWeapons(weapons) {
+		 
+		 weapons = weapons.filter(n => n.system.type != "special_wpn" && !n.system.id.includes("improvised"));
+		 
+		 return weapons;
+		 
+	 }//end nonSpecialMelee
+	 
+	 // function to order a collection alphabetically by name 
+	 static async orderOnly(aCollection) {
+		// alphabetize the list of weapons
+		aCollection.sort(function (a, b) {
+		  let nameA = a.name.toUpperCase();
+		  let nameB = b.name.toUpperCase();
+		  return nameA.localeCompare(nameB);
+		});
+		
+		return aCollection;
+	 }
+
 	 // function to order a collection by name and remove any duplicates with the same name
 	 static async orderAndReduce(aCollection) {
 		// alphabetize the list of weapons
@@ -77,6 +98,16 @@
 		 }//end for loop
 		 
 		 return toHTML;
-	 }//end makeSelect
+	 }//end makeOptions
+	 
+	 // function to create an HTML select options from a number
+	 static async numberOptions(aNumber) {
+		 let toHTML = "";
+		 for (let i=0; i <= aNumber; i++) {
+			 toHTML += `<option value=${[i]} style="color: black;"> ${[i]} </option>`
+		 }//end for loop
+		 
+		 return toHTML;
+	 }//end makeOptions
 	 
  }//end export class

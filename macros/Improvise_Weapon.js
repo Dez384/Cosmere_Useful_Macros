@@ -76,6 +76,7 @@
 		newWep.system.traits = newForm.system.traits;
 		newWep.system.equip = newForm.system.equip;
 		newWep.system.equipped = true;
+		newWep.system.traits.fragile = newForm.system.traits.fragile;
 		
 		//create a new item on the actor with the modified improvised weapon
 		let actor = allTokens[0].actor;

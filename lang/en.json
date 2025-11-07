@@ -15,7 +15,8 @@
     "Nonlethal_Defeat": "Nonlethal Defeat",
     "master": "Master Useful Macro",
     "Change_Shardblade": "Change Shardblade Form",
-    "Improvise_Weapon": "Improvise Weapon"
+    "Improvise_Weapon": "Improvise Weapon",
+    "Drain_Spheres": "Drain Spheres"
   },
   "CUM.SizeChange": {
     "title": "Token Size Picker",
@@ -114,5 +115,11 @@
     "label": "Choose a weapon",
 	"improvised": "Improvised",
     "chat": "{ACTOR} improvised a <b>{NEW}</b>."
+  },
+  "CUM.Drain_Spheres": {
+    "title": "Select Spheres to drain",
+	"button": "Drain Spheres",
+	"noSpheres": "Selected Token has no Infused Spheres",
+    "chat": "{ACTOR} drained:"
   }
 }
