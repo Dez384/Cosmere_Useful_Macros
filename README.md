@@ -11,50 +11,66 @@ This module is a collection of Macros that is intended to be used for the Cosmer
 
 https://github.com/user-attachments/assets/83d5259c-bf78-41fd-b864-e336242a178a
 
-### 2. <ins>Infuse Dun Spheres</ins>
+### 2. <ins>Drain Spheres</ins>
+* This macro will create a pop-up dialog to convert a selected token's currency items from Infused Spheres currency (mk ●) Dun Sphere currency (mk ○). 
+* For each selected token, a chat message will apear to say whether any infused spheres were drained.
+* _This macro will only work when using the **Cosmere RPG** game system._
+
+### 3. <ins>Infuse Dun Spheres</ins>
 * This macro will convert all loot items on a character from Dun Sphere currency (mk ○) to Infused Spheres currency (mk ●) for all selected tokens. 
 * For each selected token, a chat message will apear to say whether any dun spheres were infused.
 * _This macro will only work when using the **Cosmere RPG** game system._
 
-### 3. <ins>Mass Invisibility</ins>
+### 4. <ins>Change Shardblade</ins>
+* This macro creates a pop-up dialog to change the form of a radiant shardblade on a selected token to another weapon in the game system or world.
+* A chat message will apear to say what the new form the Shardblade has taken.
+* _This macro will only work when using the **Cosmere RPG** game system._
+
+### 5. <ins>Improvise Weapon</ins>
+* This macro creates a pop-up dialog to add an improvised weapon to a selected token from a list of weapons in the game system or world.
+* A chat message will apear to say what the new form the Shardblade has taken.
+* _This macro will only work when using the **Cosmere RPG** game system._
+
+
+### 6. <ins>Mass Invisibility</ins>
 * This macro will add or remove the _Invisible_ condition from all selected tokens when used.
 * This is useful when having invisible creatures from another realm hiding just out of sight!
 
 https://github.com/user-attachments/assets/e897b6e1-e2b8-4439-a324-d5fb0c70ad60
 
-### 4. <ins>See Invisibility</ins>
+### 7. <ins>See Invisibility</ins>
 * This macro will enable or disable the _See Invisibility_ vision mode for all selected tokens when used. 
 * When _See Invisibility_ is enabled by this macro, the vision mode of the token is changed to _Light Amplification_ as a visual indicator that the vision mode is enabled.
 * This is useful for seeing hidden creatures from another realm!
 
 https://github.com/user-attachments/assets/d07aff25-69de-47ba-bc50-199459624eb4
 
-### 5. <ins>Token Size Picker</ins>
+### 8. <ins>Token Size Picker</ins>
 * This macro will change the _token height_ and _token width_ of all selected tokens depending on the option chosen in a pop-up dialog box.
 * The options in the dialog box are _Medium_, _Large_, _Huge_, _Gargantuan_, and _Small_ as the character sizes are defined by the Cosmere RPG.
 
 https://github.com/user-attachments/assets/131a5581-148e-4b62-9a12-ffbd759dea1e
 
-### 6. <ins>Configure Token with BarBrawl</ins>
+### 9. <ins>Configure Token with BarBrawl</ins>
 * This macro will configure resource bars with the [__Bar Brawl__](https://foundryvtt.com/packages/barbrawl) for a token's _Health_, _Focus_, and _Investiture_.
 * To see the results of this macro, the __Bar Brawl__ module must be installed and activated.
 * _This macro will only work when using the **Cosmere RPG** game system._
 
-### 7. <ins> Configure Token Senses</ins>
+### 10. <ins> Configure Token Senses</ins>
 * This macro provides a pop-up dialog to quickly configure the token vision for all selected tokens, enabling or disabling five vision modes and setting them to an actor's _Senses Range_.
 * _This macro will only work when using the **Cosmere RPG** game system._
 
-### 8. <ins>Group Long Rest</ins>
+### 11. <ins>Group Long Rest</ins>
  * This macro will perform a Long Rest to all targeted actors. A dialog pop-up will allow which actors are chosen and if to reduce exhaustion, reduce injury duration, or to refill investiture.
  * Options for targeted actors include all selected tokens, all characters, or all game actors.
  * A chat message will appear in the chat log for each character that takes a Long Rest.
  * _This macro will only work when using the **Cosmere RPG** game system._
 
-### 9. <ins>Use Token Skill</ins>
+### 12. <ins>Use Token Skill</ins>
  * This macro provides a pop-up dialog that will list all of a selected token's skills. Clicking on a skill will use it as if the skill were used from the character sheet.
  * _This macro will only work when using the **Cosmere RPG** game system._
   
-### 10. <ins>Nonlethal Defeat</ins>
+### 13. <ins>Nonlethal Defeat</ins>
  * This macro will apply the defeated marker to all selected tokens if they are in combat and will apply the Unconcious condition with a large overlay. Using the macro again on tokens will remove the defeated marker and the Unconcious condition.
   
 ## Contributing
