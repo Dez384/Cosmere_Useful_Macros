@@ -1,45 +1,38 @@
-// import all of the macros from their individual files
-import { Mass_Invisibility } from "./macros/mass-invisibility.js";
-import { See_Invisibility } from "./macros/see-invisibility.js";
-import { Size_Picker } from "./macros/token-size-picker.js";
-import { Token_Disposition_Picker } from "./macros/token-disposition.js";
-import { Infuse_Dun_Spheres } from "./macros/infuse-dun.js";
-import { Config_Bar_Brawl } from "./macros/config-bar-brawl.js";
-import { Config_Senses } from "./macros/config-senses.js";
-import { Group_Long_Rest } from "./macros/group-long-rest.js";
-import { Use_Skill } from "./macros/use-skill.js";
-import { Nonlethal_Defeat } from "./macros/nonlethal-defeat.js";
-import { Master_Macro } from "./macros/master-macro.js";
+// This is where new macros are added:
+// list of macro names where the key is the filename and the value is the function name
+const CUMlist = { 
+	master: "Master_Macro",
+	Disposition: "Token_Disposition_Picker",
+	Config_Senses: "Config_Senses",
+	Bar_Brawl: "Config_Bar_Brawl",
+	Group_LR: "Group_Long_Rest",
+	Infuse_Dun: "Infuse_Dun_Spheres",
+	Use_Skill: "Use_Skill",
+	Size_Pick: "Size_Picker",
+	Nonlethal_Defeat: "Nonlethal_Defeat",
+	Mass_Invis: "Mass_Invisibility",
+	See_Invis: "See_Invisibility",
+	Change_Shardblade: "Change_Shardblade",
+	Improvise_Weapon: "Improvise_Weapon",
+	Drain_Spheres: "Drain_Spheres"
+	};
 
-// make an object of the macros
-const CUMmacros = { 
-	Mass_Invis: Mass_Invisibility,
-	See_Invis: See_Invisibility,
-	Size_Pick: Size_Picker,
-	Disposition: Token_Disposition_Picker,
-	Infuse_Dun: Infuse_Dun_Spheres,
-	Bar_Brawl: Config_Bar_Brawl,
-	Config_Senses: Config_Senses,
-	Group_LR: Group_Long_Rest,
-	Use_Skill: Use_Skill,
-	Nonlethal_Defeat: Nonlethal_Defeat,
-	master: Master_Macro
-	};
+//import all of the macros and assign them to an object
+const CUMmacros = {};
+for (let macro in CUMlist ){
+	let path = "./macros/"+macro+".js";
+	//import { CUMmacros[macro] } from `${path}`;
+	await import (`./macros/${macro}.js`)
+		.then(module=> {
+			CUMmacros[macro] = module[CUMlist[macro]];
+		});
+}
 	
-// a list of the title of each macro
-const CUMlabels = { 
-	Mass_Invis: "CUM.macroLabels.Mass_Invis",
-	See_Invis: "CUM.macroLabels.See_Invis",
-	Size_Pick: "CUM.macroLabels.Size_Pick",
-	Disposition: "CUM.macroLabels.Disposition",
-	Infuse_Dun: "CUM.macroLabels.Infuse_Dun",
-	Bar_Brawl: "CUM.macroLabels.Bar_Brawl",
-	Config_Senses: "CUM.macroLabels.Config_Senses",
-	Group_LR: "CUM.macroLabels.Group_LR",
-	Use_Skill: "CUM.macroLabels.Use_Skill",
-	Nonlethal_Defeat: "CUM.macroLabels.Nonlethal_Defeat",
-	master: "CUM.macroLabels.master"
-	};
+// create an object that is the title of each macro
+const CUMlabels = {};
+for (let macro in CUMlist ){
+	CUMlabels[macro] = `CUM.macroLabels.${macro}`;
+}
 
 // In the initialization hook, globally expose the object of macros
 // Init Hook

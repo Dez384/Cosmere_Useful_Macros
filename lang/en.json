@@ -8,12 +8,15 @@
     "Size_Pick": "Size Picker",
     "Disposition": "Token Disposition Picker",
     "Infuse_Dun": "Infuse Dun Spheres",
-    "Bar_Brawl": "Configure Token with BarBrawl",
+    "Bar_Brawl": "Configure Token w/ BarBrawl",
     "Config_Senses": "Configure Token Senses",
     "Group_LR": "Group Long Rest",
     "Use_Skill": "Use Token Skill",
     "Nonlethal_Defeat": "Nonlethal Defeat",
-    "master": "Master Useful Macro"
+    "master": "Master Useful Macro",
+    "Change_Shardblade": "Change Shardblade Form",
+    "Improvise_Weapon": "Improvise Weapon",
+    "Drain_Spheres": "Drain Spheres"
   },
   "CUM.SizeChange": {
     "title": "Token Size Picker",
@@ -98,5 +101,25 @@
     "title": "{NAME}'s skills",
     "invested": "Invested",
     "done": "Done"
+  },
+  "CUM.Change_Shardblade": {
+    "title": "Change Shardblade Form",
+	"button": "Change Form",
+    "midText": "changes its form to a ",
+	"noBlade": "Selected Token has no Radiant Shardblade",
+    "chat": "{ACTOR}'s {SHARD} transformed into a <b>{NEW}</b>."
+  },
+  "CUM.Improvise_Weapon": {
+    "title": "Improvise a Weapon",
+	"button": "Improvise!",
+    "label": "Choose a weapon",
+	"improvised": "Improvised",
+    "chat": "{ACTOR} improvised a <b>{NEW}</b>."
+  },
+  "CUM.Drain_Spheres": {
+    "title": "Select Spheres to drain",
+	"button": "Drain Spheres",
+	"noSpheres": "Selected Token has no Infused Spheres",
+    "chat": "{ACTOR} drained:"
   }
 }
