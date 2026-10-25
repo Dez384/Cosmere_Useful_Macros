@@ -134,7 +134,7 @@ export async function Config_Bar_Brawl(){
 								<label for="only">${game.i18n.localize('CUM.BarBrawl.options.selected')} </label>
 								</td><td>
 								<input type="radio" id="proto" value="proto" name="tokenSelect">
-								<label for="proto">${game.i18n.localize('CUM.BarBrawl.options.prototype')} </label>
+								<label for="proto">${game.i18n.localize('CUM.BarBrawl.options.proto')} </label>
 								</td><tr style="background-color: transparent"><td>
 								<input type="radio" id="apply" value="apply" name="changeDirection" checked="true">
 								<label for="apply">${game.i18n.localize('CUM.BarBrawl.options.apply')} </label>

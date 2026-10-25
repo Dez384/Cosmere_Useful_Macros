@@ -51,7 +51,7 @@
 	"button": "Configure Token",
     "options": {
       "selected": "Selected Token Only",
-      "prototype": "Selected and Prototype Token",
+      "proto": "Selected and Prototype Token",
       "apply": "Apply Settings",
       "remove": "Remove Settings"
     },
