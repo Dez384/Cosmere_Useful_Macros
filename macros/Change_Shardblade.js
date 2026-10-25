@@ -125,23 +125,52 @@
 				
 				//get new form of weapon and extract damage die, and double it if not a shardblade
 				let newForm = result.results[m];
-				let dmg = newForm.system.damage.formula;
-				let numDice = Number(dmg.slice(0,dmg.indexOf("d")));
-				if (newForm.system.id != "shardblade") {numDice = numDice*2;}
-				let newFormula = numDice+dmg.slice(dmg.indexOf("d"));
-				
+
 				//change name of shardblade
 				let newName = blade.name.slice(0,blade.name.lastIndexOf(")")+1);
 				if (newForm.system.id != "shardblade") {newName += " ["+newForm.name+"]";}
 				
-				//update shardblade
-				await blade.update({
-					'name': newName,
-					'system.activation': newForm.system.activation,
-					'system.damage.formula': newFormula,
-					'system.id': newForm.system.id,
-					'system.traits': newForm.system.traits
-				});
+				//for Cosmere RPG >=3.0.0
+				if(game.system.id == 'cosmere-rpg' && foundry.utils.isNewerVersion(game.system.version,3)){
+					
+					//get new strike data and double damage die if not a shardblade
+					let newStrike = newForm.system.strike
+					if (newForm.system.id != "shardblade") {newStrike.die.count = newStrike.die.count*2;}
+					
+					//change damage type to spirit
+					newStrike.damageType = "spirit";
+					
+					//copy traits for deadly and unique from current blade
+					let newTraits = newForm.system.traits;
+					newTraits.deadly = blade.system.traits.deadly;
+					newTraits.unique = blade.system.traits.unique;
+
+					
+					//update shardblade
+					await blade.update({
+						'name': newName,
+						'system.strike': newStrike,
+						'system.id': newForm.system.id,
+						'system.traits': newForm.system.traits
+					});
+				} //end Cosmere RPG >= 3.0.0
+				//for Cosmere RPG <3.0.0
+				else {
+					//extract damage die, and double it if not a shardblade
+					let dmg = newForm.system.damage.formula;
+					let numDice = Number(dmg.slice(0,dmg.indexOf("d")));
+					if (newForm.system.id != "shardblade") {numDice = numDice*2;}
+					let newFormula = numDice+dmg.slice(dmg.indexOf("d"));
+					
+					//update shardblade
+					await blade.update({
+						'name': newName,
+						'system.activation': newForm.system.activation,
+						'system.damage.formula': newFormula,
+						'system.id': newForm.system.id,
+						'system.traits': newForm.system.traits
+					});
+				} //end else Cosmere RPG <3.0.0
 
 				// create text of chatmessage
 				chatNote +='<p>';
